@@ -8,7 +8,6 @@ import java.io.IOException;
 public class ShakePlay implements Runnable {
     private Accelerometer am;
     private MediaPlayer mPlayer;
-    private boolean flag;
 
     public ShakePlay(Accelerometer am){
         this.am = am;
@@ -20,9 +19,7 @@ public class ShakePlay implements Runnable {
         while (true) {
             if (am.shake) {
                 if(!mPlayer.isPlaying()) {
-                    //if (flag) {
-                        mPlayer.start();
-                    //}
+                    mPlayer.start();
                 }
             } else {
                 if(mPlayer.isPlaying()) {
